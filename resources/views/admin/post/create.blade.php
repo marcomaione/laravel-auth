@@ -5,29 +5,25 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
 
-                <a href="{{route('adminpost.create')}}" class="btn btn-primary">crea un post</a>
+                <h1>crea un nuovo post</h1>
 
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titolo</th>
-                        <th scope="col">Contenuto</th>
-                        <th scope="col">Slug</th>
-                        <th scope="col">Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($posts as $post)
-                            <tr>
-                                <td>{{$post->id}}</td>
-                                <td>{{$post->title}}</td>
-                                <td>{{subsring($post->content, 0, 30)}}</td>
-                                <td>{{$post->slug}}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                  </table>
+                <form method="POST" action="{{route('adminpost.store')}}">
+
+                    @csrf
+                    
+                    <div class="form-group">
+                      <label for="title">Titolo</label>
+                      <input type="text" class="form-control" id="title" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Contenuto</label>
+                        <textarea class="form-control" id="content" rows="10" name="content"></textarea>
+                       
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
 
         
             </div>
