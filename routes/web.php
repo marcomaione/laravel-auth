@@ -26,6 +26,8 @@ route::middleware('auth')
 
     Route::get('/', 'HomeController@index')->name('home');
 
+    Route::resource('post','PostController');
+
     });
 
 route::get('{any?}', function() {
