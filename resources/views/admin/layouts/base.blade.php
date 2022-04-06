@@ -34,6 +34,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                        <li class="mx-2"><a href="{{route('adminhome')}}">Dashboard</a></li>
+                        <li class="mx-2"><a href="{{route('adminpost.index')}}">Post</a></li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
