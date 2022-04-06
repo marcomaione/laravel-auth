@@ -5,28 +5,17 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
 
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titolo</th>
-                        <th scope="col">Contenuto</th>
-                        <th scope="col">Slug</th>
-                        <th scope="col">Azioni</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($posts as $post)
-                        <tr>
-                            <td>{{$post->id}}</td>
-                            <td>{{$post->title}}</td>
-                            <td>{{subsring($post->content, 0, 30)}}</td>
-                            <td>{{$post->slug}}</td>
-                        </tr>
-                            
-                        @endforeach
-                    </tbody>
-                  </table>
+                <h1>crea un nuovo post</h1>
+
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
 
         
             </div>
