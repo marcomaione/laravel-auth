@@ -4,10 +4,19 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index () {
-         return view('admin.home');
+        $user = Auth::user();
+
+        if (Auth::user()) {
+            echo"sei loggato";
+
+        } else {
+            echo"non sei loggato";
+        }
+         return view('admin.home', compact('user'));
     }
 }
